@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/vmerinodev/podtest#readme",
   "dependencies": {
+    "axios": "^0.26.1",
     "mocha": "^9.2.2"
   }
 }
