@@ -124,13 +124,13 @@ describe('Assets tests', function () {
     it('should throw error for empty payload', async function () {
       const expected = new Error('Payload error')
       const data = await auth({ username: 'victor.merino', password: 'onirem.rotciv' })
-      const iccid = '--';
+      const iccid = '--'
       await assert.rejects(activateAsset(data.token, iccid), expected)
     })
     it('should throw error for asset not activated', async function () {
       const expected = new Error('Asset not activated')
       const data = await auth({ username: 'victor.merino', password: 'onirem.rotciv' })
-      const iccid = '--';
+      const iccid = '--'
       await assert.rejects(activateAsset(data.token, iccid, { accountId: accountId }), expected)
     })
   })
