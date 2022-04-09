@@ -1,0 +1,19 @@
+{
+  "name": "podtest",
+  "version": "1.0.0",
+  "description": "pod test",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vmerinodev/podtest.git"
+  },
+  "author": "Victor Merino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vmerinodev/podtest/issues"
+  },
+  "homepage": "https://github.com/vmerinodev/podtest#readme"
+}
