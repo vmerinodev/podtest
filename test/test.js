@@ -1,5 +1,6 @@
 const { auth } = require('../auth')
 const { addUser } = require('../users')
+const { getAssets } = require('../assets')
 const assert = require('assert')
 
 const accountId = 'efbc3325-c0db-5fa9-a5e4-4dd3c67e8813'
@@ -64,6 +65,27 @@ describe('Users tests', function () {
       const expected = new Error('User not created')
       const data = await auth({ username: 'victor.merino', password: 'onirem.rotciv' })
       await assert.rejects(addUser(data.token, { username: 'foo', password: 'bar' }), expected)
+    })
+  })
+})
+
+describe('Assets tests', function () {
+  describe('Get all assets OK', function () {
+    it('should get all assets', async function () {
+      const data = await auth({ username: 'victor.merino', password: 'onirem.rotciv' })
+      const assets = await getAssets(data.token, accountId)
+      assert.equal(!assets, false)
+    })
+  })
+  describe('Get all assets KO', function () {
+    it('should throw error for empty token', async function () {
+      const expected = new Error('Token not found')
+      await assert.rejects(getAssets(), expected)
+    })
+    it('should throw error for empty account id', async function () {
+      const expected = new Error('Account id not found')
+      const data = await auth({ username: 'victor.merino', password: 'onirem.rotciv' })
+      await assert.rejects(getAssets(data.token), expected)
     })
   })
 })
