@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/vmerinodev/podtest/issues"
   },
-  "homepage": "https://github.com/vmerinodev/podtest#readme"
+  "homepage": "https://github.com/vmerinodev/podtest#readme",
+  "dependencies": {
+    "mocha": "^9.2.2"
+  }
 }
